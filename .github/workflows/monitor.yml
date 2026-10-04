@@ -149,6 +149,3 @@ jobs:
             -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             "$DISCORD_WEBHOOK_URL" || true
-      - name: Test Discord notification
-        if: always()
-        run: node notifier.js --test --channel discord
