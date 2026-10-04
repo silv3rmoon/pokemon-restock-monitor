@@ -108,6 +108,7 @@ name: Test Discord notification
         env:
 
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      
       - name: Commit updated data files
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
