@@ -100,7 +100,13 @@ jobs:
             FLAGS="$FLAGS --test"
           fi
           node monitor.js $FLAGS
+name: Test Discord notification
 
+        run: node notifier.js --test --channel discord
+
+        env:
+
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       - name: Commit updated data files
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
